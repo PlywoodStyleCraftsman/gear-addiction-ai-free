@@ -1,3 +1,42 @@
+const questions = [
+  "鏡を見る頻度は？",
+  "髪型を整えていますか？",
+  "ヒゲの手入れは？",
+  "肌の手入れは？",
+  "薄毛が気になりますか？",
+  "白髪は気になりますか？",
+  "ヒゲは清潔に見えますか？",
+  "体重管理はできていますか？",
+  "運動していますか？",
+  "睡眠は十分ですか？",
+  "疲れやすいですか？",
+  "服を整えていますか？",
+  "サイズの合う服を着ていますか？",
+  "靴はきれいですか？",
+  "友人と会っていますか？",
+  "趣味仲間はいますか？",
+  "家族との会話はありますか？",
+  "今後やりたい事がありますか？",
+  "毎日の楽しみはありますか？",
+  "今の自分は好きですか？"
+];
+
+const box = document.getElementById("questions");
+
+questions.forEach((q, i) => {
+  box.innerHTML += `
+    <div class="question">
+      <p>Q${i + 1}. ${q}</p>
+      <select id="q${i}">
+        <option value="0">選択してください</option>
+        <option value="5">良い</option>
+        <option value="3">普通</option>
+        <option value="1">改善したい</option>
+      </select>
+    </div>
+  `;
+});
+
 function showResult() {
   let score = 0;
 
