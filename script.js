@@ -108,14 +108,39 @@ let score = 0;
     step = "明日の朝、鏡を見ることから始める。";
   }
 
-  document.getElementById("result").innerHTML =
-    `診断結果：${score}点<br><br>
-     ${rank}<br><br>
-     ${message}<br><br>
-     あなたの弱点<br><br>
-     ① ${weakPoints[0].category}<br>
-     ② ${weakPoints[1].category}<br>
-     ③ ${weakPoints[2].category}<br><br>
-     今日の一歩<br><br>
-     ${step}`;
-}
+ document.getElementById("result").innerHTML = `
+診断結果：${score}点<br><br>
+
+${rank}<br><br>
+
+${message}<br><br>
+
+あなたの弱点<br><br>
+
+① ${weakPoints[0].category}<br>
+② ${weakPoints[1].category}<br>
+③ ${weakPoints[2].category}<br><br>
+
+今日の一歩<br><br>
+
+${step}
+
+<br><br>
+
+<a
+href="https://instagram.com/takuto_mens_care"
+target="_blank"
+onclick="gtag('event','instagram_click')"
+style="
+display:inline-block;
+padding:12px 20px;
+background:#000;
+color:#fff;
+text-decoration:none;
+margin-top:15px;
+border-radius:5px;
+"
+>
+Instagramで続きを見る
+</a>
+`;
