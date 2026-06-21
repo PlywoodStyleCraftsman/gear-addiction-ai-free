@@ -38,6 +38,9 @@ questions.forEach((q, i) => {
 });
 
 function showResult() {
+  
+ gtag('event', 'diagnosis_completed');
+  
   let score = 0;
 
   const categoryScores = {
