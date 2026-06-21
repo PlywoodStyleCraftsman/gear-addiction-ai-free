@@ -38,12 +38,7 @@ questions.forEach((q, i) => {
 });
 
 function showResult() {
-
-console.log("DIAGNOSIS TEST");
-
-gtag('event', 'diagnosis_completed');
-
-let score = 0;
+  let score = 0;
 
   const categoryScores = {
     "見た目": 0,
@@ -108,21 +103,14 @@ let score = 0;
     step = "明日の朝、鏡を見ることから始める。";
   }
 
- document.getElementById("result").innerHTML = `
-診断結果：${score}点<br><br>
-
-${rank}<br><br>
-
-${message}<br><br>
-
-あなたの弱点<br><br>
-
-① ${weakPoints[0].category}<br>
-② ${weakPoints[1].category}<br>
-③ ${weakPoints[2].category}<br><br>
-
-今日の一歩<br><br>
-
-${step}
-
-`;
+  document.getElementById("result").innerHTML =
+    `診断結果：${score}点<br><br>
+     ${rank}<br><br>
+     ${message}<br><br>
+     あなたの弱点<br><br>
+     ① ${weakPoints[0].category}<br>
+     ② ${weakPoints[1].category}<br>
+     ③ ${weakPoints[2].category}<br><br>
+     今日の一歩<br><br>
+     ${step}`;
+}
