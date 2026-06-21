@@ -1,63 +1,40 @@
-function freeAdvice() {
+function showResult() {
+  let score = 0;
 
-  const text = document.getElementById("freeText").value;
-  const advice = document.getElementById("advice");
-
-  if (!text) {
-    advice.innerHTML = "悩みを入力してください。";
-    return;
+  for (let i = 0; i < questions.length; i++) {
+    score += Number(document.getElementById(`q${i}`).value);
   }
 
-  let result = "";
+  let rank = "";
+  let message = "";
+  let step = "";
 
-  if (text.includes("薄毛") || text.includes("髪")) {
-
-    result =
-    "あなたの今日の一歩<br><br>" +
-    "髪を隠すより整えることを優先しましょう。<br>" +
-    "明日は鏡の前で3分だけ髪型を確認してください。";
-
-  } else if (
-    text.includes("体力") ||
-    text.includes("疲れ") ||
-    text.includes("運動")
-  ) {
-
-    result =
-    "あなたの今日の一歩<br><br>" +
-    "運動は量より継続です。<br>" +
-    "今日は10分だけ散歩してみましょう。";
-
-  } else if (
-    text.includes("定年") ||
-    text.includes("仕事") ||
-    text.includes("将来")
-  ) {
-
-    result =
-    "あなたの今日の一歩<br><br>" +
-    "将来の不安は行動でしか減りません。<br>" +
-    "今後やりたい事を3つ書き出してみましょう。";
-
-  } else if (
-    text.includes("妻") ||
-    text.includes("夫婦") ||
-    text.includes("家族")
-  ) {
-
-    result =
-    "あなたの今日の一歩<br><br>" +
-    "問題解決より会話が先です。<br>" +
-    "今日は感謝を一言だけ伝えてみましょう。";
-
+  if (score >= 90) {
+    rank = "Sランク";
+    message = "理想的なイケオジ状態です。";
+    step = "今の習慣を1つだけ記録して、明日も続ける。";
+  } else if (score >= 75) {
+    rank = "Aランク";
+    message = "かなり良好です。";
+    step = "明日の朝、髪・眉・服装を3分だけ確認する。";
+  } else if (score >= 60) {
+    rank = "Bランク";
+    message = "改善余地ありです。";
+    step = "明日の朝、鏡の前で3分だけ身だしなみを整える。";
+  } else if (score >= 40) {
+    rank = "Cランク";
+    message = "生活習慣の見直しが必要です。";
+    step = "今日は10分だけ散歩する。";
   } else {
-
-    result =
-    "あなたの今日の一歩<br><br>" +
-    "悩みを一つに絞ってください。<br>" +
-    "まずは今週改善したい事を一つ決めましょう。";
-
+    rank = "Dランク";
+    message = "まずは小さな一歩から始めましょう。";
+    step = "明日の朝、鏡を見ることから始める。";
   }
 
-  advice.innerHTML = result;
+  document.getElementById("result").innerHTML =
+    `診断結果：${score}点<br><br>
+     ${rank}<br><br>
+     ${message}<br><br>
+     今日の一歩<br><br>
+     ${step}`;
 }
