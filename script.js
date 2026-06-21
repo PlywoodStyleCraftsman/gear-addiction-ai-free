@@ -38,10 +38,12 @@ questions.forEach((q, i) => {
 });
 
 function showResult() {
-  
- gtag('event', 'diagnosis_completed');
-  
-  let score = 0;
+
+console.log("DIAGNOSIS TEST");
+
+gtag('event', 'diagnosis_completed');
+
+let score = 0;
 
   const categoryScores = {
     "見た目": 0,
