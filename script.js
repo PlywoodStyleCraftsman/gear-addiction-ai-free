@@ -125,22 +125,4 @@ ${message}<br><br>
 
 ${step}
 
-<br><br>
-
-<a
-href="https://instagram.com/takuto_mens_care"
-target="_blank"
-onclick="gtag('event','instagram_click')"
-style="
-display:inline-block;
-padding:12px 20px;
-background:#000;
-color:#fff;
-text-decoration:none;
-margin-top:15px;
-border-radius:5px;
-"
->
-Instagramで続きを見る
-</a>
 `;
