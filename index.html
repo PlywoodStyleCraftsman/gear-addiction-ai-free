@@ -9,28 +9,23 @@
 <body>
 
 <div class="container">
+  <h1>60代男性の悩み診断AI</h1>
+  <p class="lead">20問診断＋自由相談</p>
 
-<h1>60代男性の悩み診断AI</h1>
+  <div id="questions"></div>
 
-<p>気になる悩みを選んでください</p>
+  <button onclick="showResult()">診断する</button>
 
-<select id="question">
-<option value="">選択してください</option>
-<option>見た目が老けた</option>
-<option>薄毛が気になる</option>
-<option>体力が落ちた</option>
-<option>定年後が不安</option>
-<option>夫婦関係が難しい</option>
-<option>友人が減った</option>
-</select>
+  <div id="result"></div>
 
-<button onclick="diagnose()">診断する</button>
+  <h2>自由相談</h2>
+  <textarea id="freeText" placeholder="例：最近、薄毛と体力低下が気になっています。定年後の生活も不安です。"></textarea>
 
-<div id="result"></div>
+  <button onclick="freeAdvice()">相談する</button>
 
+  <div id="advice"></div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
